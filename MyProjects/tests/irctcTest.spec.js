@@ -48,4 +48,5 @@ test("IRCTC ticket booking", async ({ browser }) => {
 
   //searching trains
   await page.locator('//button[@label="Find Trains"]').click();
+  await page.close();
 });

@@ -1,0 +1,43 @@
+name: Playwright Test Automation CI
+
+on:
+  push:
+    branches: [main] # 🔁 Triggers only when code is pushed to 'main'
+  pull_request:
+    branches: [main] # Also on PRs to 'main'
+
+jobs:
+  test:
+    name: Run Playwright Tests
+    runs-on: ubuntu-latest
+
+    steps:
+      # 📁 Checkout your repository code
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # 🟢 Set up Node.js (required for Playwright)
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: "18" # Adjust based on your project
+
+      # 📦 Install dependencies using package-lock.json
+      - name: Install dependencies
+        run: npm ci
+
+      # 📥 Install Playwright browsers (Chromium, Firefox, WebKit)
+      - name: Install Playwright Browsers
+        run: npx playwright install --with-deps
+
+      # 🧪 Run ALL Playwright Test Cases
+      - name: Run all tests
+        run: npm test
+
+      # 💾 Upload HTML Report (playwright-report folder)
+      - name: Upload Playwright HTML report
+        if: always() # Run even if tests fail
+        uses: actions/upload-artifact@v3
+        with:
+          name: playwright-report
+          path: playwright-report

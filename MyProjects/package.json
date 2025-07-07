@@ -3,7 +3,12 @@
   "version": "1.0.0",
   "description": "",
   "main": "irctcTest.spec.js",
-  "scripts": {},
+  "scripts": {
+  "test": "npx playwright test",                          
+  "test:irctc": "npx playwright test tests/irctcTest.spec.js", 
+  "test:yatra": "npx playwright test tests/yatraTest.spec.js", 
+  "report": "npx playwright show-report"                
+},
   "keywords": [],
   "author": "",
   "license": "ISC",
