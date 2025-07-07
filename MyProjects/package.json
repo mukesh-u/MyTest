@@ -5,8 +5,7 @@
   "main": "irctcTest.spec.js",
   "scripts": {
   "test": "npx playwright test",                          
-  "test:irctc": "npx playwright test tests/irctcTest.spec.js", 
-  "test:yatra": "npx playwright test tests/yatraTest.spec.js", 
+  "test:dummy": "npx playwright test tests/dummyTest.spec.js",
   "report": "npx playwright show-report"                
 },
   "keywords": [],
