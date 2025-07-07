@@ -2,7 +2,8 @@ name: Playwright Test Automation CI
 
 on:
   push:
-    branches: [master] # 🔁 Triggers only when code is pushed to 'main'
+    branches: [master]
+  workflow_dispatch: # 🔁 Triggers only when code is pushed to 'main'
   pull_request:
     branches: [master] # Also on PRs to 'main'
 
