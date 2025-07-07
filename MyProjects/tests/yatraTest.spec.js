@@ -11,7 +11,7 @@ test("Go to page and verify the title", async ({ page }) => {
   // page.close();
 });
 
-test.only("HomePage Test ", async ({ page }) => {
+test("HomePage Test ", async ({ page }) => {
   await page.goto("https://www.yatra.com/");
   const input = await page.locator('p[title="New Delhi"]');
   await input.click();
