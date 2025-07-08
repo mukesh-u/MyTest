@@ -18,6 +18,6 @@ Each project here is structured and built for real-world application testing and
 
 - **Tech Stack:** Playwright + JavaScript
 - **Description:** Automated end-to-end testing for flight search on [Yatra.com](https://www.yatra.com).
-- **Status:** ✅ Recently added
+- **Status:** ✅ Recently added.
 
 ---
